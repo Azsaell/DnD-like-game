@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="oknoRozgrywkiAnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: E5E0E0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GameplayController">
+   <children>
+      <GridPane fx:id="planszaGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="14.0" layoutY="14.0" maxHeight="692.0" maxWidth="1000.0" prefHeight="692.0" prefWidth="1000.0">
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <Pane fx:id="prawaStronaPane" layoutX="1014.0" layoutY="14.0" prefHeight="692.0" prefWidth="252.0">
+         <children>
+            <TextArea fx:id="logiTextArea" editable="false" layoutX="14.0" prefHeight="167.0" prefWidth="238.0" promptText="Logi z gry" style="-fx-border-color: #626262;" wrapText="true" />
+            <VBox fx:id="menu1VBox" alignment="CENTER" layoutX="51.0" layoutY="380.0" spacing="40.0">
+               <children>
+                  <Button fx:id="goToMenuButton" mnemonicParsing="false" onAction="#goToMenuButtonPressed" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Powrót do menu">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="pokazEqButton" mnemonicParsing="false" onAction="#pokazEqButtonPressed" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Ekwipunek">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="atakujButton" mnemonicParsing="false" onAction="#atakujButtonPressed" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Walka">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox fx:id="menu2VBox" alignment="CENTER" disable="true" layoutX="51.0" layoutY="380.0" spacing="27.0" visible="false">
+               <children>
+                  <Button fx:id="zrywButton" mnemonicParsing="false" onAction="#zrywButtonPressed" prefHeight="56.0" prefWidth="165.0" text="Zryw">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+                  <VBox>
+                     <children>
+                        <ComboBox fx:id="wybierzEliksirComboBox" onAction="#wybierzEliksirComboBoxPressed" prefWidth="165.0" promptText="Wybierz eliksir" />
+                        <Button fx:id="wypijEliksirButton" mnemonicParsing="false" onAction="#wypijEliksirButtonPressed" prefHeight="56.0" prefWidth="165.0" text="Wypij eliksir">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Button fx:id="koniecTuryButton" mnemonicParsing="false" onAction="#koniecTuryButtonPressed" prefHeight="56.0" prefWidth="165.0" text="Koniec tury">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="34.0" layoutY="182.0">
+               <children>
+                  <Label text="Punkty życia" />
+                  <ProgressBar fx:id="hpProgressBar" prefWidth="200.0" progress="1.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="33.0" layoutY="264.0">
+               <children>
+                  <Label text="Punkty ruchu" />
+                  <ProgressBar fx:id="punktyRuchuProgressBar" prefWidth="200.0" progress="1.0" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+      <StackPane fx:id="oknoEqStackPane" disable="true" layoutX="340.0" layoutY="160.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #C1C1C1; -fx-border-color: black; -fx-border-width: 3;" visible="false">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox alignment="CENTER" layoutX="21.0" layoutY="56.0" spacing="3.0">
+                     <children>
+                        <Label text="Lewa ręka" />
+                        <TextField fx:id="lewaRekaTextField" editable="false" style="-fx-background-color: FCFCFC; -fx-border-color: #222222;" />
+                        <Button fx:id="zdejmijLewaRekaButton" mnemonicParsing="false" onAction="#zdejmijLewaRekaButtonPressed" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Zdejmij" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="211.0" layoutY="56.0" spacing="3.0">
+                     <children>
+                        <Label text="Pancerz" />
+                        <TextField fx:id="pancerzTextField" editable="false" style="-fx-background-color: FCFCFC; -fx-border-color: #222222;" />
+                        <Button fx:id="zdejmijPancerzButton" mnemonicParsing="false" onAction="#zdejmijPancerzButtonPressed" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Zdejmij" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="400.0" layoutY="56.0" spacing="3.0">
+                     <children>
+                        <Label text="Prawa ręka" />
+                        <TextField fx:id="prawaRekaTextField" editable="false" style="-fx-background-color: FCFCFC; -fx-border-color: #222222;" />
+                        <Button fx:id="zdejmijPrawaRekaButton" mnemonicParsing="false" onAction="#zdejmijPrawaRekaButtonPressed" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Zdejmij" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" layoutX="147.0" layoutY="206.0">
+                     <children>
+                        <Label text="Przedmioty w plecaku">
+                           <font>
+                              <Font size="19.0" />
+                           </font></Label>
+                        <ComboBox fx:id="przedmiotyWPlecakuComboBox" onAction="#przedmiotyWPlecakuComboBoxPressed" prefWidth="300.0" promptText="Wybierz przedmiot" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="wezWLewaRekeButton" layoutX="38.0" layoutY="287.0" mnemonicParsing="false" onAction="#wezWLewaRekeButtonPressed" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Weź w lewą rękę" />
+                  <Button fx:id="ubierzButton" layoutX="247.0" layoutY="287.0" mnemonicParsing="false" onAction="#ubierzButtonPressed" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Ubierz" />
+                  <Button fx:id="wezWPrawaRekeButton" layoutX="417.0" layoutY="287.0" mnemonicParsing="false" onAction="#wezWPrawaRekeButtonPressed" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Weż w prawą rękę" />
+                  <Separator layoutY="166.0" prefWidth="600.0" />
+                  <Label layoutX="210.0" layoutY="22.0" text="Ubrane przedmioty">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Label>
+                  <Button fx:id="zamknijOknoEqButton" layoutX="150.0" layoutY="359.0" mnemonicParsing="false" onAction="#zamknijOknoEqButtonPressed" prefWidth="300.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Zamknij" />
+                  <Separator layoutY="356.0" prefWidth="600.0" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="oknoKoncaGryStackPane" disable="true" layoutX="340.0" layoutY="160.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #C1C1C1; -fx-border-color: black; -fx-border-width: 3;" visible="false">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="ktoWygralLabel" layoutX="105.0" layoutY="110.0" text="Koniec gry">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="zagrajPonownieButton" layoutX="100.0" layoutY="283.0" mnemonicParsing="false" onAction="#zagrajPonownieButtonPressed" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Zagraj ponownie">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="wyjdzZGryButton" layoutX="329.0" layoutY="283.0" mnemonicParsing="false" onAction="#wyjdzZGryButtonPressed" prefHeight="56.0" prefWidth="165.0" style="-fx-background-color: #E4E4E4; -fx-border-color: #626262; -fx-border-width: 2;" text="Wyjdź z gry">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

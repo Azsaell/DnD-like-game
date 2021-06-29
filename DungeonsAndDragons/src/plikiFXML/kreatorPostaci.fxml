@@ -1,0 +1,2150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KreatorPostaciController">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="720.0" prefWidth="1281.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="714.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0">
+                     <children>
+                        <Button fx:id="backToMenuButton" mnemonicParsing="false" onAction="#backToMenuButtonPressed" prefHeight="40.0" prefWidth="130.0" text="Powrót" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="338.0" text="Stwórz swojego bohatera" textAlignment="CENTER">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="startGameplayButton" mnemonicParsing="false" onAction="#startGameplayButtonPressed" prefHeight="40.0" prefWidth="130.0" text="Start" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" layoutX="15.0" layoutY="64.0" prefHeight="640.0" prefWidth="608.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Rasa">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="rasaTextField" editable="false" />
+                              <Button fx:id="wyborRasyButton" mnemonicParsing="false" onAction="#wyborRasyButtonPressed" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="Przydziel punkty umiejętności" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Broń">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField editable="false" />
+                              <Button fx:id="wyborBroniButton" mnemonicParsing="false" onAction="#wyborBroniButtonPressed" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Pancerz">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField editable="false" />
+                              <Button fx:id="wyborPancerzaButton" mnemonicParsing="false" onAction="#wyborPancerzaButtonPressed" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Tarcza">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField editable="false" />
+                              <Button fx:id="wyborTarczyButton" mnemonicParsing="false" onAction="#wyborTarczyButtonPressed" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Dodatkowy przedmiot">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField editable="false" />
+                              <Button fx:id="wyborItemaButton" mnemonicParsing="false" onAction="#wyborItemaButtonPressed" text="Wybierz" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <StackPane>
+               <children>
+                  <StackPane fx:id="praweSkrzydloPoczatek" disable="true" visible="false">
+                     <children>
+                        <ImageView fitHeight="723.0" fitWidth="636.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/praweSkrzydloPoczatek.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <AnchorPane fx:id="praweSkrzydloRasa" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="13.0" layoutY="13.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Rasa">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="65.0" prefHeight="530.0" prefWidth="608.0">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="530.0" prefWidth="184.0">
+                                 <children>
+                                    <CheckBox mnemonicParsing="false" text="Elf">
+                                       <VBox.margin>
+                                          <Insets bottom="100.0" left="20.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox mnemonicParsing="false" text="Człowiek">
+                                       <VBox.margin>
+                                          <Insets bottom="40.0" left="20.0" top="40.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </CheckBox>
+                                    <CheckBox mnemonicParsing="false" text="Krasnolud">
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="100.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font size="21.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="530.0" prefWidth="398.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Punkty życia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Siła" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zręczność" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Kondycja" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Punkty życia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Siła" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zręczność" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Kondycja" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Punkty życia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Siła" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zręczność" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Kondycja" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="13.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborRasyButton" mnemonicParsing="false" onAction="#zatwierdzWyborRasyButtonPressed" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloStatystyki" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false" />
+                  <AnchorPane fx:id="praweSkrzydloBron" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Broń">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="14.0" layoutY="52.0">
+                           <content>
+                              <HBox alignment="CENTER_LEFT" prefHeight="530.0" prefWidth="608.0">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="91.0">
+                                             <children>
+                                                <CheckBox fx:id="bron1CheckBox" mnemonicParsing="false" text="s">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron1CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="50" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="238.0">
+                                             <children>
+                                                <CheckBox fx:id="bron2CheckBox" mnemonicParsing="false" text="Krótki miecz">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron2CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="70" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="414.0">
+                                             <children>
+                                                <CheckBox fx:id="bron3CheckBox" mnemonicParsing="false" text="Długi miecz">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron3CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="80" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="580.0">
+                                             <children>
+                                                <CheckBox fx:id="bron4CheckBox" mnemonicParsing="false" text="Wielki miecz">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron4CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="100" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="765.0">
+                                             <children>
+                                                <CheckBox fx:id="bron5CheckBox" mnemonicParsing="false" text="Krótki łuk">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron5CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="75" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="940.0">
+                                             <children>
+                                                <CheckBox fx:id="bron6CheckBox" mnemonicParsing="false" text="Długi łuk">
+                                                   <font>
+                                                      <Font size="21.0" />
+                                                   </font>
+                                                </CheckBox>
+                                                <HBox alignment="CENTER_LEFT">
+                                                   <children>
+                                                      <Label text="Cena" />
+                                                      <TextField fx:id="bron6CenaTextField" editable="false" prefHeight="26.0" prefWidth="86.0" text="90" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <VBox alignment="CENTER_RIGHT" prefHeight="530.0" prefWidth="398.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1d4" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Jednoręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Tak" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="0.5" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1d6" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Jednoręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Tak" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1.0" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1d8" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Jednoręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Nie" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="2.0" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="360.0" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="2d6" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Dwuręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Nie" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="6.0" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="520.0" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1d4" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="6" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Dwuręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Tak" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="0.75" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="690.0" prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../Pictures/Avatar.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <ScrollPane hbarPolicy="NEVER">
+                                                   <content>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox prefHeight="26.0" prefWidth="133.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Obrażenia" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1d6" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="10.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Zasięg" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="9" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="7.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Typ broni" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Dwuręczna" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Finess" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="Tak" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets bottom="2.5" top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                            <HBox layoutX="10.0" layoutY="109.0" prefHeight="0.0" prefWidth="200.0">
+                                                               <children>
+                                                                  <VBox prefHeight="200.0" prefWidth="75.0">
+                                                                     <children>
+                                                                        <Label text="Waga" />
+                                                                     </children>
+                                                                  </VBox>
+                                                                  <VBox prefHeight="200.0" prefWidth="100.0">
+                                                                     <children>
+                                                                        <TextField editable="false" text="1.25" />
+                                                                     </children>
+                                                                  </VBox>
+                                                               </children>
+                                                               <VBox.margin>
+                                                                  <Insets top="2.5" />
+                                                               </VBox.margin>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                             <padding>
+                                                <Insets top="20.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </content>
+                        </ScrollPane>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborBroniButton" mnemonicParsing="false" onAction="#zatwierdzWyborBroniButtonPressed" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloPancerz" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Pancerz">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="54.0" prefHeight="530.0" prefWidth="608.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="91.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Pancerz1">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="238.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Pancerz2">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="414.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Pancerz3">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="530.0" prefWidth="398.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborPancerzaButton" mnemonicParsing="false" onAction="#zatwierdzWyborPancerzaButtonPressed" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloTarcza" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Tarcza">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="54.0" prefHeight="530.0" prefWidth="608.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="91.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Tarcza1">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="238.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Tarcza2">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="414.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Tarcza3">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="530.0" prefWidth="398.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborTarczyButton" mnemonicParsing="false" onAction="#zatwierdzWyborTarczyButtonPressed" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloItem" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Dodatkowy przedmiot">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="54.0" prefHeight="530.0" prefWidth="608.0">
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="91.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Mały eliksir">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="13.0" layoutY="253.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Średni eliksir">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="414.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Duży eliksir">
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <Label text="Cena" />
+                                                <TextField editable="false" prefHeight="26.0" prefWidth="86.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="530.0" prefWidth="398.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Pictures/Avatar.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <VBox>
+                                             <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Obrażenia" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Zasięg" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Typ broni" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <Label text="Finess" />
+                                                         </children>
+                                                      </VBox>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0">
+                                                         <children>
+                                                            <TextField editable="false" />
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets top="20.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborItemaButton" mnemonicParsing="false" onAction="#zatwierdzWyborItemaButtonPressed" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

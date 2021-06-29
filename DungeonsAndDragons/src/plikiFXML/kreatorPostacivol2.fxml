@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #DFD9D5;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="KreatorPostaciController">
+   <children>
+      <SplitPane dividerPositions="0.5" prefHeight="720.0" prefWidth="1281.0" style="-fx-background-color: #DFD9D5;">
+        <items>
+          <AnchorPane blendMode="DARKEN" minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="714.0" style="-fx-background-color: #B59F95; -fx-border-color: #806B61; -fx-border-width: 4;">
+               <children>
+                  <HBox alignment="CENTER" layoutX="11.0" layoutY="14.0">
+                     <children>
+                        <Button fx:id="backToMenuButton" mnemonicParsing="false" onAction="#backToMenuButtonPressed" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Powrót" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="338.0" text="Stwórz swojego bohatera" textAlignment="CENTER">
+                           <padding>
+                              <Insets left="5.0" right="5.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="startGameplayButton" mnemonicParsing="false" onAction="#startGameplayButtonPressed" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Start" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="TOP_CENTER" layoutX="15.0" layoutY="64.0" prefHeight="640.0" prefWidth="608.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Rasa">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="wybranaRasaTextField" alignment="CENTER" editable="false" style="-fx-background-color: #DFD9D5;" />
+                              <Button fx:id="wyborRasyButton" mnemonicParsing="false" onAction="#wyborRasyButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="przydzielPunktyUmiejetnosciButton" mnemonicParsing="false" onAction="#przydzielPunktyUmiejetnosciButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Przydziel punkty umiejętności" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Broń">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="wybranaBronTextField" alignment="CENTER" editable="false" style="-fx-background-color: #DFD9D5;" />
+                              <Button fx:id="wyborBroniButton" disable="true" mnemonicParsing="false" onAction="#wyborBroniButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Pancerz">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="wybranyPancerzTextField" alignment="CENTER" editable="false" style="-fx-background-color: #DFD9D5;" />
+                              <Button fx:id="wyborPancerzaButton" disable="true" mnemonicParsing="false" onAction="#wyborPancerzaButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Tarcza">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="wybranaTarczaTextField" alignment="CENTER" editable="false" style="-fx-background-color: #DFD9D5;" />
+                              <Button fx:id="wyborTarczyButton" disable="true" mnemonicParsing="false" onAction="#wyborTarczyButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Dodatkowy przedmiot">
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                              <TextField alignment="CENTER" editable="false" style="-fx-background-color: #DFD9D5;" />
+                              <Button fx:id="wyborItemaButton" disable="true" mnemonicParsing="false" onAction="#wyborItemaButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 2; -fx-text-fill: black;" text="Wybierz" />
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="90.0" prefWidth="608.0">
+                           <children>
+                              <HBox alignment="CENTER" layoutX="14.0" layoutY="28.0">
+                                 <children>
+                                    <Label text="Sakiewka">
+                                       <font>
+                                          <Font size="34.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="portfelTextField" prefHeight="41.0" prefWidth="100.0" style="-fx-background-color: #DFD9D5;" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <StackPane style="-fx-background-color: #B59F95; -fx-border-color: #806B61; -fx-border-width: 4;">
+               <children>
+                  <StackPane fx:id="praweSkrzydloPoczatek">
+                     <children>
+                        <ImageView fitHeight="707.0" fitWidth="678.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                           <image>
+                              <Image url="@../Pictures/menuStartowePNG.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <AnchorPane fx:id="praweSkrzydloRasa" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="13.0" layoutY="13.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Rasa">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="13.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborRasyButton" mnemonicParsing="false" onAction="#zatwierdzWyborRasyButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <VBox alignment="CENTER" layoutX="31.0" layoutY="102.0" prefHeight="520.0" prefWidth="572.0">
+                           <children>
+                              <ComboBox fx:id="wyborRasyComboBox" onAction="#wyborRasyComboBoxPressed" prefHeight="26.0" prefWidth="562.0" promptText="Wybierz rasę" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4;" />
+                              <Pane prefHeight="326.0" prefWidth="572.0">
+                                 <children>
+                                    <ImageView fx:id="rasaImageView" fitHeight="300.0" fitWidth="250.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Pictures/Avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <HBox alignment="CENTER" layoutX="367.0" layoutY="10.0">
+                                       <children>
+                                          <Label text="+Siła">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="silaRasyTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="305.0" layoutY="55.0">
+                                       <children>
+                                          <Label text="+Zręczność">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="zrecznoscRasyTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="316.0" layoutY="100.0">
+                                       <children>
+                                          <Label text="+Kondycja">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="kondycjaRasyTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="315.0" layoutY="145.0">
+                                       <children>
+                                          <Label text="+Szybkość">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="szybkoscRasyTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="331.0" layoutY="190.0">
+                                       <children>
+                                          <Label text="+Obrona">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="obronaRasyTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="282.0" layoutY="235.0">
+                                       <children>
+                                          <Label text="+Punkty życia">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="hpRasyTextField" prefHeight="26.0" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloBron" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Broń">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <VBox alignment="CENTER" layoutX="32.0" layoutY="102.0" prefHeight="520.0" prefWidth="572.0">
+                           <children>
+                              <ComboBox fx:id="wyborBroniComboBox" onAction="#wyborBroniComboBoxPressed" prefHeight="26.0" prefWidth="562.0" promptText="Wybierz broń" style="-fx-background-color: #9A7F72; -fx-border-width: 4; -fx-border-color: #806B61;" />
+                              <Pane prefHeight="326.0" prefWidth="572.0">
+                                 <children>
+                                    <ImageView fx:id="bronImageView" fitHeight="300.0" fitWidth="250.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Pictures/Avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <HBox alignment="CENTER" layoutX="289.0" layoutY="30.0">
+                                       <children>
+                                          <Label text="Obrażenia">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="obrazeniaBroniTextField" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="323.0" layoutY="70.0">
+                                       <children>
+                                          <Label text="Zasięg">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="zasiegBroniTextField" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="281.0" layoutY="110.0">
+                                       <children>
+                                          <Label text="Dwuręczna">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="dwurecznaBronTextField" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="327.0" layoutY="150.0">
+                                       <children>
+                                          <Label text="Finess">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="finessBronTextField" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="332.0" layoutY="190.0">
+                                       <children>
+                                          <Label text="Waga">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="wagaBroniTextField" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="424.0" layoutY="237.0">
+                                       <children>
+                                          <Label text="Cena">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cenaBroniTextField" prefHeight="26.0" prefWidth="86.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborBroniButton" mnemonicParsing="false" onAction="#zatwierdzWyborBroniButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloPancerz" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Pancerz">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborPancerzaButton" mnemonicParsing="false" onAction="#zatwierdzWyborPancerzaButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <VBox alignment="CENTER" layoutX="32.0" layoutY="102.0" prefHeight="520.0" prefWidth="572.0">
+                           <children>
+                              <ComboBox fx:id="wyborPancerzaComboBox" onAction="#wyborPancerzaComboBoxPressed" prefHeight="26.0" prefWidth="562.0" promptText="Wybierz pancerz" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4;" />
+                              <Pane prefHeight="326.0" prefWidth="572.0">
+                                 <children>
+                                    <ImageView fx:id="pancerzImageView" fitHeight="300.0" fitWidth="250.0" layoutX="14.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Pictures/Avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <HBox alignment="CENTER" layoutX="377.0" layoutY="98.0">
+                                       <children>
+                                          <Label text="Obrona">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="obronaPancerzaTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="BOTTOM_LEFT" layoutX="319.0" layoutY="25.0">
+                                       <children>
+                                          <Label text="Max. bonus&#10;od zręczności">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="dexBonusPancerzaTextField" prefHeight="6.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="393.0" layoutY="150.0">
+                                       <children>
+                                          <Label text="Waga">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="wagaPancerzaTextField" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="401.0" layoutY="237.0">
+                                       <children>
+                                          <Label text="Cena">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cenaPancerzaTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloTarcza" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Tarcza">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborTarczyButton" mnemonicParsing="false" onAction="#zatwierdzWyborTarczyButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <VBox alignment="CENTER" layoutX="32.0" layoutY="102.0" prefHeight="520.0" prefWidth="572.0">
+                           <children>
+                              <ComboBox fx:id="wyborTarczyComboBox" onAction="#wyborTarczyComboBoxPressed" prefHeight="26.0" prefWidth="562.0" promptText="Wybierz tarczę" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4;" />
+                              <Pane prefHeight="326.0" prefWidth="572.0">
+                                 <children>
+                                    <ImageView fx:id="tarczaImageView" fitHeight="300.0" fitWidth="250.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Pictures/Avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <HBox alignment="CENTER" layoutX="377.0" layoutY="43.0">
+                                       <children>
+                                          <Label text="Obrona">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="obronaTarczyTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="393.0" layoutY="126.0">
+                                       <children>
+                                          <Label text="Waga">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="wagaTarczyTextField" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="401.0" layoutY="237.0">
+                                       <children>
+                                          <Label text="Cena">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cenaTarczyTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloItem" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Dodatkowy przedmiot">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="588.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzWyborItemaButton" mnemonicParsing="false" onAction="#zatwierdzWyborItemaButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <VBox alignment="CENTER" layoutX="32.0" layoutY="102.0" prefHeight="520.0" prefWidth="572.0">
+                           <children>
+                              <ComboBox fx:id="wyborItemaComboBox" onAction="#wyborItemaComboBoxPressed" prefHeight="26.0" prefWidth="562.0" promptText="Wybierz przedmiot" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4;" />
+                              <Pane prefHeight="360.0" prefWidth="572.0">
+                                 <children>
+                                    <ImageView fx:id="itemImageView" fitHeight="300.0" fitWidth="250.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Pictures/Avatar.png" />
+                                       </image>
+                                    </ImageView>
+                                    <VBox layoutX="358.0" layoutY="39.0">
+                                       <children>
+                                          <Label text="Opis">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextArea fx:id="opisItemaTextArea" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #DFD9D5;" wrapText="true" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" layoutX="393.0" layoutY="209.0">
+                                       <children>
+                                          <Label text="Waga">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="wagaItemaTextField" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="399.0" layoutY="237.0">
+                                       <children>
+                                          <Label text="Cena">
+                                             <font>
+                                                <Font size="19.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cenaItemaTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="14.0" layoutY="305.0">
+                                       <children>
+                                          <Label text="W ekwipunku" />
+                                          <TextField fx:id="iloscItemowWEqTextField" prefWidth="50.0" style="-fx-background-color: #DFD9D5;" />
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="kupItemButton" layoutX="379.0" layoutY="291.0" mnemonicParsing="false" onAction="#kupItemButtonPressed" prefHeight="55.0" prefWidth="159.0" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Kup">
+                                       <font>
+                                          <Font size="29.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="praweSkrzydloStatystyki" disable="true" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="466.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="608.0">
+                           <children>
+                              <Label text="Przydziel punkty umiejętności">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="14.0" layoutY="549.0" prefHeight="121.0" prefWidth="608.0">
+                           <children>
+                              <Button fx:id="zatwierdzPrzydzialPunktowUmiejetnosciButton" mnemonicParsing="false" onAction="#zatwierdzPrzydzialPunktowUmiejetnosciButtonPressed" style="-fx-background-color: #9A7F72; -fx-border-color: #806B61; -fx-border-width: 4; -fx-text-fill: black;" text="Zatwierdź">
+                                 <font>
+                                    <Font size="28.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </StackPane>
+                        <HBox alignment="CENTER" layoutX="76.0" layoutY="152.0" prefHeight="289.0" prefWidth="484.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="289.0" prefWidth="174.0" spacing="15.0">
+                                 <children>
+                                    <Label prefHeight="26.0" text="Siła">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="26.0" text="Zręczność">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="26.0" text="Kondycja">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="26.0" text="Szybkość">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                    <Label prefHeight="26.0" text="Obrona">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="236.0" prefWidth="188.0" spacing="15.0">
+                                 <children>
+                                    <HBox alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="silaRasyStatsTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                          <Button fx:id="odejmijSileButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="-">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                          <Button fx:id="dodajSileButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="+">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="115.0">
+                                       <children>
+                                          <TextField fx:id="zrecznoscRasyStatsTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                          <Button fx:id="odejmijZrecznoscButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="-">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                          <Button fx:id="dodajZrecznoscButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="+">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="136.0">
+                                       <children>
+                                          <TextField fx:id="kondycjaRasyStatsTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                          <Button fx:id="odejmijKondycjeButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="-">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                          <Button fx:id="dodajKondycjeButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="+">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="156.0">
+                                       <children>
+                                          <TextField fx:id="szybkoscRasyStatsTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                          <Button fx:id="odejmijSzybkoscButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="-">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                          <Button fx:id="dodajSzybkoscButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="+">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" layoutX="10.0" layoutY="177.0">
+                                       <children>
+                                          <TextField fx:id="obronaRasyStatsTextField" prefWidth="140.0" style="-fx-background-color: #DFD9D5;" />
+                                          <Button fx:id="odejmijObroneButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="-">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                          <Button fx:id="dodajObroneButton" minHeight="26.0" minWidth="30.0" mnemonicParsing="false" onAction="#modyfikujStatystykiButtonPressed" prefHeight="26.0" prefWidth="30.0" style="-fx-background-color: #9A7F72; -fx-border-width: 1; -fx-border-color: #806B61; -fx-text-fill: black;" text="+">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font></Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <StackPane layoutX="276.0" layoutY="494.0" prefHeight="55.0" prefWidth="345.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="200.0">
+                                 <children>
+                                    <Label text="Do wydania: ">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="punktyDoWydaniaTextField" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #DFD9D5;">
+                                       <font>
+                                          <Font size="19.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </StackPane>
+                     </children></AnchorPane>
+               </children>
+            </StackPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
